@@ -5,7 +5,7 @@ RUN apt update -y
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
- apt install apache2=2.4.29-1ubuntu4.5 zip unzip\
+ apt install apache2 zip unzip\
  php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring \
  php7.2-zip php7.2-mysql php7.2-xml php-token-stream \
  php7.2-json php php7.2-zip -y
