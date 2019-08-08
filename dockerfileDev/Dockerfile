@@ -11,22 +11,34 @@ RUN \
  php7.2-json php php7.2-zip -y
 
 
+<<<<<<< HEAD
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
+=======
+>>>>>>> master
 
 
-RUN useradd canjeaweb
-RUN usermod -g www-data canjeaweb
+
+RUN useradd apacheuser
+RUN usermod -g www-data apacheuser
 RUN chown -R  canjeaweb:www-data /var/www/html/
 
-#USER canjeaweb
+#USER apacheuser
 
+<<<<<<< HEAD
 #RUN cd /var/www/html && composer create-project --prefer-dist  laravel/laravel canjeaton 
 
 #USER root
 
 #RUN chgrp -R www-data /var/www/html/canjeaton/* && chmod -R 775 /var/www/html/canjeaton/storage/*
+=======
+#RUN cd /var/www/html && composer create-project --prefer-dist  laravel/laravel app*"
+
+#USER root
+
+#RUN chgrp -R www-data /var/www/html/app/ && chmod -R 775 /var/www/html/app/storage
+>>>>>>> master
 
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf

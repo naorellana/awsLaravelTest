@@ -2,9 +2,9 @@
 
 #instalar dependencias de proyecto y configuracion de aranque de proyecto
 cd /var/www/html/app
-composer install
-cp .env.example .env
-php artisan key:generate
+#composer install
+#cp .env.example .env
+#php artisan key:generate
 # Set group permissions
 chgrp -R www-data /var/www/html/app/*
 # Set folder permissions
