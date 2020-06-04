@@ -4,9 +4,12 @@ RUN apt-get update -y
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN \
- ENV DEBIAN_FRONTEND=noninteractive apt install apache2 zip unzip -y
+RUN  apt install apache2 zip unzip -y
+RUN apt install php php-pear php-curl php-dev php-gd php-mbstring \
+ php-zip php-mysql php-xml php-token-stream \
+ php-json php-zip -y
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get install composer -y
 
 RUN adduser apacheuser
@@ -15,7 +18,7 @@ RUN chown -R  apacheuser:www-data /var/www/html/
 
 USER apacheuser
 
-RUN cd /var/www/html && composer create-project --prefer-dist  laravel/laravel app*"
+#RUN cd /var/www/html && composer create-project --prefer-dist  laravel/laravel app
 
 #USER root
 
