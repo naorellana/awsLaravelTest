@@ -20,7 +20,7 @@ USER apacheuser
 
 #RUN cd /var/www/html && composer create-project --prefer-dist  laravel/laravel app
 
-#USER root
+USER root
 
 #RUN chgrp -R www-data /var/www/html/app/ && chmod -R 775 /var/www/html/app/storage
 
